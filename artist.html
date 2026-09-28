@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>艺术家词条 · 艺史长卷</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">艺史<em>长卷</em></span>
+      <span class="brand-sub">Atlas of 150 Artists</span>
+    </a>
+    <nav class="topnav">
+      <a id="nav-back" href="index.html">← 返回名录</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="crumb" id="crumb"></div>
+  <div id="app"><div class="loading">正在载入词条……</div></div>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p><b>艺史长卷</b>　对艺术史产生重大影响的 150 位艺术家 · 可检索数据库。
+      本词条按统一六部分结构撰写：生平与时代语境／创作风格与视觉标识／代表作品与艺术观念／
+      创作演变与分期／历史地位与影响力／争议与多元评价。</p>
+    <p>图版来源：大都会艺术博物馆、克利夫兰艺术博物馆开放获取计划，以及 WikiArt 视觉艺术百科。
+      每幅图版均标注来源机构与馆藏编号，并尽量提供高清原图链接。</p>
+    <p><a href="index.html" id="foot-back">← 返回艺术家名录</a></p>
+  </div>
+</footer>
+
+<div class="lightbox" id="lb">
+  <button class="lb-close" id="lbclose" title="关闭">×</button>
+  <div class="lb-inner">
+    <img class="lb-img" id="lbimg" alt="">
+    <div class="lb-cap" id="lbcap"></div>
+  </div>
+</div>
+
+<button class="totop" id="totop" title="回到顶部">↑</button>
+
+<script src="data/db-index.js"></script>
+<script src="data/db-entries.js"></script>
+<script src="assets/js/detail.js"></script>
+</body>
+</html>

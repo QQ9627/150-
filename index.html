@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>对艺术史产生重大影响的 150 位艺术家 · 可检索数据库</title>
+<meta name="description" content="收录 150 位对艺术史产生重大影响的艺术家，每位按生平与时代语境、创作风格与视觉标识、代表作品与艺术观念、创作演变与分期、历史地位与影响力、争议与多元评价六个部分完整成篇，支持按姓名、流派、时期、地区、媒介多维检索。">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">艺史<em>长卷</em></span>
+      <span class="brand-sub">Atlas of 150 Artists</span>
+    </a>
+    <nav class="topnav">
+      <a href="index.html" class="on">艺术家名录</a>
+      <a href="#timeline">时期长卷</a>
+      <a href="#aboutsite">关于本库</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="page-head">
+    <h1>对艺术史产生重大影响的<br><em>150 位艺术家</em></h1>
+    <p class="lede">
+      从 4 世纪的顾恺之到当代的埃尔·阿纳楚，跨越 <b>1600 余年</b>、<b>9 大地区</b>、<b>60 余个流派</b>与
+      <b>16 类媒介</b>。每位艺术家都按同一套结构完整成篇——生平与时代语境、创作风格与视觉标识、
+      代表作品与艺术观念、创作演变与分期、历史地位与影响力、争议与多元评价，六个部分逐条分述，
+      代表作配以馆藏高清图版。
+    </p>
+    <div class="stats">
+      <div class="stat"><b id="s-count">150</b><span>位艺术家</span></div>
+      <div class="stat"><b id="s-words">—</b><span>字正文</span></div>
+      <div class="stat"><b id="s-imgs">—</b><span>幅馆藏图版</span></div>
+      <div class="stat"><b id="s-mv">—</b><span>个流派标签</span></div>
+      <div class="stat"><b id="s-years">—</b><span>跨度年数</span></div>
+    </div>
+  </section>
+
+  <section id="timeline" class="timeline"></section>
+
+  <section class="controls">
+    <div class="searchrow">
+      <label class="searchbox" id="sbox">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+        <input id="q" type="search" autocomplete="off" placeholder="检索姓名、流派、时期、地区、媒介、作品名……（如「印象派」「梵高」「油画」「日本」「超现实主义」）">
+        <button class="clear" id="qclear" type="button" title="清空">×</button>
+      </label>
+      <select class="sel" id="sort">
+        <option value="chrono">按年代排序</option>
+        <option value="chrono-desc">按年代倒序</option>
+        <option value="name-zh">按中文名排序</option>
+        <option value="name-en">按英文名排序</option>
+        <option value="img">按图版数量排序</option>
+      </select>
+    </div>
+
+    <div class="fgroups">
+      <div class="fgroup"><div class="flabel">时期</div><div class="chips" id="f-period"></div></div>
+      <div class="fgroup"><div class="flabel">地区</div><div class="chips" id="f-region"></div></div>
+      <div class="fgroup"><div class="flabel">流派</div><div class="chips" id="f-movement"></div></div>
+      <div class="fgroup"><div class="flabel">媒介</div><div class="chips" id="f-medium"></div></div>
+    </div>
+
+    <div class="activebar">
+      <span class="resultcount" id="rc">共 <b>150</b> 位</span>
+      <button class="btn-reset" id="reset" type="button">清除全部条件</button>
+      <button class="btn-reset" id="moremv" type="button">展开全部流派</button>
+    </div>
+  </section>
+
+  <section id="timeline" class="fgroups" style="padding:14px 0 0"></section>
+
+  <div class="grid" id="grid"></div>
+
+</main>
+
+<footer class="footer" id="aboutsite">
+  <div class="wrap">
+    <p><b>关于本库</b>　本站为纯静态离线数据库，全部词条与图版数据以独立结构化文件集中存放于
+      <code>data/</code> 目录（<code>roster.json</code> 选目、<code>artists.json</code> 全文、<code>index.json</code> 索引、
+      <code>images.json</code> 图版清单、<code>taxonomy.json</code> 检索词表），补全新词条只需新增一个 JSON 片段并重跑
+      <code>scripts/build_db.py</code>，无需改动任何页面代码。</p>
+    <p><b>图版来源</b>　图版取自 <a href="https://www.metmuseum.org/" target="_blank" rel="noopener">大都会艺术博物馆开放获取计划</a>、
+      <a href="https://www.clevelandart.org/" target="_blank" rel="noopener">克利夫兰艺术博物馆开放获取计划</a>
+      与 <a href="https://www.wikiart.org/" target="_blank" rel="noopener">WikiArt 视觉艺术百科</a>。
+      公有领域作品的图版用于研究与教育用途；每幅图版均标注来源机构，并尽量给出馆藏编号与高清原图链接。
+      部分近现代作品尚在版权保护期内，无合法开放图版可用，故以版式化的题名图版呈现，并给出馆藏检索入口。</p>
+    <p><b>编写体例</b>　每位艺术家均按统一六部分结构撰写，各条要点力求具体、可核验。史实以通行艺术史文献为准；
+      当学界存在分歧时，在「争议与多元评价」一部分并列呈现不同观点。本库为研究与检索工具，不替代专业图录与原典文献。</p>
+  </div>
+</footer>
+
+<button class="totop" id="totop" title="回到顶部">↑</button>
+
+<script src="data/db-index.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
